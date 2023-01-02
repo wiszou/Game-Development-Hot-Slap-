@@ -17,7 +17,6 @@ public class FightingHandlerGame2 : MonoBehaviour
     public TextMeshProUGUI playerSixName;
     public TextMeshProUGUI playerOneHPUI;
     public TextMeshProUGUI playerTwoHPUI;
-
  
     public int playerOneHP;
     public int playerTwoHP;
