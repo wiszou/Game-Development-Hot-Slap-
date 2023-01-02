@@ -34,8 +34,7 @@ public class WinnerGame1 : MonoBehaviour
             winnerPlayer.text = NameHandler.playerNames[0];
             NameHandler.winner = 1;
             Game1W.Add(NameHandler.playerNames[0]);
-
-            Debug.Log("Player 1 Wins" );
+            Debug.Log("Player 1 added to Game1W" );
             yield return new WaitForSeconds(1f);
             
         }
@@ -45,7 +44,7 @@ public class WinnerGame1 : MonoBehaviour
             winnerPlayer.text = NameHandler.playerNames[1];
             NameHandler.winner = 2;
             Game1W.Add(NameHandler.playerNames[1]);
-            Debug.Log("Player 2 Wins");
+            Debug.Log("Player 2 added to Game1W");
             yield return new WaitForSeconds(1f);
         }
 
