@@ -10,7 +10,7 @@ public class WinnerGame2 : MonoBehaviour
     public TextMeshProUGUI winnerPlayer;
     public int winnerNum;
     public static List<string> Game2W;
-    
+
     
 
     void Awake()
@@ -56,6 +56,11 @@ public class WinnerGame2 : MonoBehaviour
     public void OnClickGame3()
     {
         SceneManager.LoadScene("Game 3");
+    }
+
+      public void OnClickGame2Bracket()
+    {
+        SceneManager.LoadScene("3PlayerBracketDisplay");
     }
     
 }

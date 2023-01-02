@@ -4,13 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+
 public class WinnerGame1 : MonoBehaviour
 {
 
     public TextMeshProUGUI winnerPlayer;
     public int winnerNum;
     public static List<string> Game1W;
-    
 
     void Awake()
     {
@@ -34,6 +34,7 @@ public class WinnerGame1 : MonoBehaviour
             winnerPlayer.text = NameHandler.playerNames[0];
             NameHandler.winner = 1;
             Game1W.Add(NameHandler.playerNames[0]);
+
             Debug.Log("Player 1 Wins" );
             yield return new WaitForSeconds(1f);
             
@@ -55,6 +56,11 @@ public class WinnerGame1 : MonoBehaviour
     public void OnClickGame2()
     {
         SceneManager.LoadScene("Game 2");
+    }
+
+     public void OnClickGame1Bracket()
+    {
+        SceneManager.LoadScene("3PlayerBracketDisplay");
     }
     
 }

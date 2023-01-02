@@ -101,7 +101,10 @@ public class NameHandler : MonoBehaviour
         SceneManager.LoadScene("6PlayerBracketDisplay");
     }
 
-
+    public void OnClickGame1Bracket()
+    {
+        SceneManager.LoadScene("3PlayerBracket");
+    }
     public void OnClickGame1()
     {
         SceneManager.LoadScene("Game 1");

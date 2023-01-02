@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class WinnerScript : MonoBehaviour
 {
@@ -47,5 +48,9 @@ public class WinnerScript : MonoBehaviour
         }
     }
 
-    
+        //GO BACK TO MAIN MENU
+        public void  OnClickMainMenu()
+        {
+            SceneManager.LoadScene("Menu");
+        }
 }

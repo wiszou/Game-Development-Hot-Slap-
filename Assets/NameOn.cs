@@ -12,10 +12,14 @@ public class NameOn : MonoBehaviour
     public TMP_Text Player4Name;
     public TMP_Text Player5Name;
     public TMP_Text Player6Name;
+  
 
-    
+    public TMP_Text Game1Winner;
+    public TMP_Text Game2Winner;
+    public TMP_Text OverallWinner;
+   
 
-    void Start()
+    void Awake()
     {
         // Bind the playerNames list to a UI element such as a Text or Dropdown component
         Player1Name.text = NameHandler.playerNames[0];
@@ -24,5 +28,9 @@ public class NameOn : MonoBehaviour
         Player4Name.text = NameHandler.playerNames[3];
         Player5Name.text = NameHandler.playerNames[4];
         Player6Name.text = NameHandler.playerNames[5];
+        Game1Winner.text = WinnerGame1.Game1W[0];
+        Debug.Log("Winner Name");
+
+    
     }
-}
+}   
