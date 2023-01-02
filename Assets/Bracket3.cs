@@ -13,7 +13,6 @@ public class Bracket3 : MonoBehaviour
     public TMP_Text Player3Name;
     public TMP_Text G1Winner;
     public TMP_Text G1WinnerN;
-    public TMP_Text Game2Winner;
     public TMP_Text OverallWinner;
 
     void Start()
@@ -27,7 +26,7 @@ public class Bracket3 : MonoBehaviour
         Debug.Log("Winner Name");
     }
     //Continue to Game 2
-    public void OnClickGame2Please()
+    public void OnClickGame2()
     {
         SceneManager.LoadScene("Game 2");
     }

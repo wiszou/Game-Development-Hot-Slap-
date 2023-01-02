@@ -54,7 +54,7 @@ public class WinnerGame1 : MonoBehaviour
     //CONTINUE TO GAME 2
     public void OnClickGame2()
     {
-        SceneManager.LoadScene("Game 2");
+        SceneManager.LoadScene("Game 1");
     }
 
      public void OnClickGame1Bracket()
