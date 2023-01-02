@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/2Player/Game.unity
+    guid: 5484d776ca298ae439439df786de86b7
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 7cf6c8916e0a73d4daae77d51f8dbfc1
+  - enabled: 1
+    path: Assets/Scenes/Select No. Of Players.unity
+    guid: f02f5dc5f32590849a0bb2f6b3bc8a82
+  - enabled: 1
+    path: Assets/Scenes/2Player/2Player.unity
+    guid: 1e0c672d84c61ac4ca16b778b6b96a34
+  - enabled: 1
+    path: Assets/Scenes/3Player/3Player.unity
+    guid: a7fb5bf2a3593c44ba8d1572683172d8
+  - enabled: 1
+    path: Assets/Scenes/3Player/3PlayerBracketDisplay.unity
+    guid: 6b4f0831ea73e0649b4d23fdeef399e2
+  - enabled: 1
+    path: Assets/Scenes/4Player/4Player.unity
+    guid: 7b05ee7cfc08d0e499c7236467f0b867
+  - enabled: 1
+    path: Assets/Scenes/4Player/4PlayerBracketDisplay.unity
+    guid: 9c3a72b9ac983564da3a15d5dbf8fc82
+  - enabled: 1
+    path: Assets/Scenes/5Player/5Player.unity
+    guid: cbf7138c1be7d0a488505fba0320dcb9
+  - enabled: 1
+    path: Assets/Scenes/5Player/5PlayerBracketDisplay.unity
+    guid: 515a2c3c65ea29a4d9ff38eebad868c6
+  - enabled: 1
+    path: Assets/Scenes/6Player/6Player.unity
+    guid: db18dc1c74aca944094b2d5cae241d44
+  - enabled: 1
+    path: Assets/Scenes/6Player/6PlayerBracketDisplay.unity
+    guid: e29621f4bfcf2d3498fb4ec170103dea
+  - enabled: 1
+    path: Assets/Scenes/2PLAYERS.unity
+    guid: c00db0284a93f734b98d28ccdc01fe3d
+  - enabled: 1
+    path: Assets/Scenes/GAME SCENE.unity
+    guid: f9fc477ede577d943a3506be2bf09f00
+  - enabled: 1
+    path: Assets/Scenes/Main Scene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/3Player/Game 1/Game 1.unity
+    guid: 52c156cf6861cea40b3ac33f56945bd3
+  - enabled: 1
+    path: Assets/Scenes/3Player/Game 1/WinnerGame1.unity
+    guid: ad0ec8acef8a8eb4db23583a6396d031
+  - enabled: 1
+    path: Assets/Scenes/3Player/Game 2/Game 2.unity
+    guid: b7abc95bce3254e42ae83d717df24f8a
+  - enabled: 1
+    path: Assets/Scenes/3Player/Game 2/WinnerGame2.unity
+    guid: 588d71cd9189b784e99da6f142159001
+  - enabled: 1
+    path: Assets/Scenes/WinnerScene.unity
+    guid: b914727034a10bd4e9912903d2611180
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  m_configObjects: {}
