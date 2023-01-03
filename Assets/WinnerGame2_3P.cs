@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class WinnerGame2  : MonoBehaviour
+public class WinnerGame2_3P  : MonoBehaviour
 {
 
     public TextMeshProUGUI winnerPlayer;
@@ -32,9 +32,9 @@ public class WinnerGame2  : MonoBehaviour
     {
         if (winnerNum == 0)
         {
-            winnerPlayer.text = NameHandler.playerNames[2];
+            winnerPlayer.text = WinnerGame1.Game1W[0];
             NameHandler.winner = 1;
-            Game2W.Add(NameHandler.playerNames[2]);
+            Game2W.Add(WinnerGame1.Game1W[0]);
             Debug.Log("Player 1 Wins" );
             yield return new WaitForSeconds(1f);
             
@@ -42,9 +42,9 @@ public class WinnerGame2  : MonoBehaviour
 
         else
         {
-            winnerPlayer.text = NameHandler.playerNames[3];
+            winnerPlayer.text = NameHandler.playerNames[2];
             NameHandler.winner = 2;
-            Game2W.Add(NameHandler.playerNames[3]);
+            Game2W.Add(NameHandler.playerNames[2]);
             Debug.Log("Player 2 Wins");
             yield return new WaitForSeconds(1f);
         }

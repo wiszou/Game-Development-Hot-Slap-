@@ -4,12 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class WinnerGame2  : MonoBehaviour
+public class WinnerGame3 : MonoBehaviour
 {
 
     public TextMeshProUGUI winnerPlayer;
     public int winnerNum;
-    public static List<string> Game2W;
+    public static List<string> Game3W;
 
     
 
@@ -20,7 +20,7 @@ public class WinnerGame2  : MonoBehaviour
 
     void Start()
     {
-        Game2W = new List<string>();
+        Game3W = new List<string>();
     }
 
      void Update()
@@ -32,9 +32,9 @@ public class WinnerGame2  : MonoBehaviour
     {
         if (winnerNum == 0)
         {
-            winnerPlayer.text = NameHandler.playerNames[2];
+            winnerPlayer.text = WinnerGame1.Game1W[0];
             NameHandler.winner = 1;
-            Game2W.Add(NameHandler.playerNames[2]);
+            Game3W.Add("GameThreeWinner");
             Debug.Log("Player 1 Wins" );
             yield return new WaitForSeconds(1f);
             
@@ -42,9 +42,9 @@ public class WinnerGame2  : MonoBehaviour
 
         else
         {
-            winnerPlayer.text = NameHandler.playerNames[3];
+            winnerPlayer.text = WinnerGame2.Game2W[0];
             NameHandler.winner = 2;
-            Game2W.Add(NameHandler.playerNames[3]);
+            Game3W.Add("GameThreewinner");
             Debug.Log("Player 2 Wins");
             yield return new WaitForSeconds(1f);
         }
@@ -52,7 +52,7 @@ public class WinnerGame2  : MonoBehaviour
 
     }
 
-    //3 PLAYER
+    //CONTINUE TO GAME 3
     public void OnClickGame3()
     {
         SceneManager.LoadScene("Game 3");
@@ -68,11 +68,6 @@ public class WinnerGame2  : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    //4 PLAYERS
-    public void OnClickGame2Bracket_4P()
-    {
-        SceneManager.LoadScene("Bracket3_4P");
-    }
-
     
+
 }

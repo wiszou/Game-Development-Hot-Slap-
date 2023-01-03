@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
-public class FightingHandlerGame2 : MonoBehaviour
+public class Fighting3Handler_4P : MonoBehaviour
 {   
     public static List<string> Winners;
     public TextMeshProUGUI playerOneName;
@@ -24,7 +24,7 @@ public class FightingHandlerGame2 : MonoBehaviour
     void Awake()
     {
         playerOneName.text = WinnerGame1.Game1W[0];
-        playerTwoName.text = NameHandler.playerNames[2];
+        playerTwoName.text = WinnerGame2.Game2W[0];
         playerOneHP = NameHandler.playerHP;
         playerTwoHP = NameHandler.playerHP;
     }
@@ -51,7 +51,7 @@ public class FightingHandlerGame2 : MonoBehaviour
         {
             NameHandler.winner = 1;
             yield return new WaitForSeconds(.1f);
-            SceneManager.LoadScene("WinnerGame2");
+            SceneManager.LoadScene("WinnerGame3_4P");
            
 
         }
@@ -60,7 +60,7 @@ public class FightingHandlerGame2 : MonoBehaviour
         {
             NameHandler.winner = 0;
             yield return new WaitForSeconds(.1f);
-            SceneManager.LoadScene("WinnerGame2");
+            SceneManager.LoadScene("WinnerGame3_4P");
         }
 
         

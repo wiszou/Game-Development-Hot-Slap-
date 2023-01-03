@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Game2Manager : MonoBehaviour
+public class GameManager_3P : MonoBehaviour
 {
     
     public Animator animatorPlayerAttk; // The playerattack's animator component
@@ -24,7 +24,7 @@ public class Game2Manager : MonoBehaviour
     public int energyGainPerHit = 10; // The amount of energy gained by a player when they hit the enemy
     public int energyCostPerUlti = 50; // The amount of energy required to use the ultimate attack
     public bool ultimateAttackEnabled = false; // Flag to track if the ultimate attack is enabled for the player
-    public FightingHandlerGame2 FightingHandlerGame2; // Add a reference to the FightingHandlerGame2 script
+    public FightingHandler_3P FightingHandler_3P; // Add a reference to the FightingHandler_3P script
 
     // Flag to track whose turn it is
     private bool isPlayer1Turn = true;
@@ -96,13 +96,13 @@ public class Game2Manager : MonoBehaviour
         }
     }
     // Check if player 1's hit points have reached 0
-    if (FightingHandlerGame2.playerOneHP <= 0)
+    if (FightingHandler_3P.playerOneHP <= 0)
     {
         // Trigger the death sequence for player 1
         StartCoroutine(DeathSequence1(player1));
     }
     // Check if player 2's hit points have reached 0
-    if (FightingHandlerGame2.playerTwoHP <= 0)
+    if (FightingHandler_3P.playerTwoHP <= 0)
     {
         // Trigger the death sequence for player 2
         StartCoroutine(DeathSequence2(enemy1));
@@ -112,7 +112,7 @@ public class Game2Manager : MonoBehaviour
     public void AttackEnemy(GameObject other)
     {
         // Decrease the enemy's hit points
-        FightingHandlerGame2.playerTwoHP -= attackPower;
+        FightingHandler_3P.playerTwoHP -= attackPower;
         // Increase the player's energy
         playerOneEnergy += energyGainPerHit;
         // Check if the player's energy has reached the required amount for the ultimate attack
@@ -132,7 +132,7 @@ public class Game2Manager : MonoBehaviour
     public void AttackPlayer(GameObject other)
     {
         // Decrease the player's hit points
-        FightingHandlerGame2.playerOneHP -= attackPower;
+        FightingHandler_3P.playerOneHP -= attackPower;
         // Increase the enemy's energy
         playerTwoEnergy += energyGainPerHit;
         // Check if the player's energy has reached the required amount for the ultimate attack
@@ -154,7 +154,7 @@ public class Game2Manager : MonoBehaviour
         if (playerOneEnergy >= energyCostPerUlti)
         {
         // Decrease the enemy's hit points
-        FightingHandlerGame2.playerTwoHP -= ultiPower;
+        FightingHandler_3P.playerTwoHP -= ultiPower;
         // Decrease the player's energy
         playerOneEnergy -= energyCostPerUlti;
         // Start the ultimate attack animation and wait for it to finish
@@ -168,7 +168,7 @@ public class Game2Manager : MonoBehaviour
         if (playerTwoEnergy >= energyCostPerUlti)
         {
         // Decrease the enemy's hit points
-        FightingHandlerGame2.playerOneHP -= ultiPower;
+        FightingHandler_3P.playerOneHP -= ultiPower;
         // Decrease the player's energy
         playerTwoEnergy -= energyCostPerUlti;
         // Start the ultimate attack animation and wait for it to finish
@@ -225,7 +225,7 @@ public class Game2Manager : MonoBehaviour
         // If the enemy has not pressed the dodge button during the attack animation, decrease their hit points
         if (!enemyDodged)
         {
-            FightingHandlerGame2.playerTwoHP -= attackPower;
+            FightingHandler_3P.playerTwoHP -= attackPower;
         }
         // Reset the enemyDodged flag for the next attack
         enemyDodged = false;
@@ -241,7 +241,7 @@ public class Game2Manager : MonoBehaviour
         // If the enemy has not pressed the dodge button during the attack animation, decrease their hit points
         if (!enemyDodged)
         {
-            FightingHandlerGame2.playerOneHP -= attackPower;
+            FightingHandler_3P.playerOneHP -= attackPower;
         }
         // Reset the enemyDodged flag for the next attack
         enemyDodged = false;

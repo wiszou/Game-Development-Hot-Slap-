@@ -123,6 +123,124 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &93394935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93394937}
+  - component: {fileID: 93394936}
+  m_Layer: 0
+  m_Name: Fighting3Handler_4P
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &93394936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93394935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f53d92b38b94046a8c0225f4045a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOneName: {fileID: 590663900}
+  playerTwoName: {fileID: 2041360151}
+  playerThreeName: {fileID: 0}
+  playerFourName: {fileID: 0}
+  playerFiveName: {fileID: 0}
+  playerSixName: {fileID: 0}
+  playerOneHPUI: {fileID: 1785647944}
+  playerTwoHPUI: {fileID: 718052598}
+  playerOneHP: 0
+  playerTwoHP: 0
+--- !u!4 &93394937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93394935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540.01135, y: 259.93027, z: -5.2703958}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &416466317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416466319}
+  - component: {fileID: 416466318}
+  m_Layer: 0
+  m_Name: Game3Manager_4P
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &416466318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416466317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70cd9ade1712d348833175199e5b912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorPlayerAttk: {fileID: 1318070621}
+  animatorPlayerDodge: {fileID: 1318070621}
+  animatorEnemyAttk: {fileID: 1223878651}
+  animatorEnemyDodge: {fileID: 1223878651}
+  animatorPlayerUlti: {fileID: 1318070621}
+  animatorEnemyUlti: {fileID: 1223878651}
+  ultiDuration: 1
+  ultiPower: 30
+  dodgeDuration: 0.9
+  attackDuration: 0.3
+  attackPower: 10
+  player1: {fileID: 1318070612}
+  enemy1: {fileID: 1223878643}
+  playerOneEnergy: 0
+  playerTwoEnergy: 0
+  energyGainPerHit: 10
+  energyCostPerUlti: 50
+  ultimateAttackEnabled: 0
+  Fighting3Handler_4P: {fileID: 93394936}
+  deathAnimationDuration: 0.3
+--- !u!4 &416466319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416466317}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 542.48065, y: 261.40097, z: -4.2317977}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &418480641
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,70 +823,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1009282813
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1009282815}
-  - component: {fileID: 1009282814}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1009282814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009282813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57cd7e4d9a3278145b784372a1c4f41e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animatorPlayerAttk: {fileID: 1318070621}
-  animatorPlayerDodge: {fileID: 1318070621}
-  animatorEnemyAttk: {fileID: 1223878651}
-  animatorEnemyDodge: {fileID: 1223878651}
-  animatorPlayerUlti: {fileID: 1318070621}
-  animatorEnemyUlti: {fileID: 1223878651}
-  ultiDuration: 1
-  ultiPower: 30
-  dodgeDuration: 0.9
-  attackDuration: 0.2
-  attackPower: 10
-  player1: {fileID: 1318070612}
-  enemy1: {fileID: 1223878643}
-  playerOneEnergy: 0
-  playerTwoEnergy: 0
-  energyGainPerHit: 10
-  energyCostPerUlti: 50
-  ultimateAttackEnabled: 0
-  fightingHandler: {fileID: 1940580915}
-  deathAnimationDuration: 0.3
---- !u!4 &1009282815
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009282813}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1223878643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,60 +1329,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785647942}
   m_CullTransparentMesh: 1
---- !u!1 &1940580914
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1940580916}
-  - component: {fileID: 1940580915}
-  m_Layer: 0
-  m_Name: FightingHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1940580915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940580914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abbd9a595b1f8b94e9887ca81c81e587, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerOneName: {fileID: 590663900}
-  playerTwoName: {fileID: 2041360151}
-  playerThreeName: {fileID: 0}
-  playerFourName: {fileID: 0}
-  playerFiveName: {fileID: 0}
-  playerSixName: {fileID: 0}
-  playerOneHPUI: {fileID: 1785647944}
-  playerTwoHPUI: {fileID: 718052598}
-  playerOneHP: 0
-  playerTwoHP: 0
---- !u!4 &1940580916
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940580914}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 560.2418, y: 263.03552, z: -3.1117015}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2041360149
 GameObject:
   m_ObjectHideFlags: 0

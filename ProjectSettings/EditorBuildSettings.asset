@@ -21,17 +21,65 @@ EditorBuildSettings:
     path: Assets/Scenes/2Player/2Player.unity
     guid: 1e0c672d84c61ac4ca16b778b6b96a34
   - enabled: 1
+    path: Assets/Scenes/2Player/GameScene.unity
+    guid: 11b14ae1210281c4cb4305eda17e9550
+  - enabled: 1
+    path: Assets/Scenes/2Player/OverallWinner.unity
+    guid: b914727034a10bd4e9912903d2611180
+  - enabled: 1
     path: Assets/Scenes/3Player/3Player.unity
     guid: a7fb5bf2a3593c44ba8d1572683172d8
   - enabled: 1
-    path: Assets/Scenes/3Player/3PlayerBracketDisplay.unity
+    path: Assets/Scenes/3Player/Bracket1_3P.unity
     guid: 6b4f0831ea73e0649b4d23fdeef399e2
+  - enabled: 1
+    path: Assets/Scenes/3Player/Game 1/Game 1.unity
+    guid: 52c156cf6861cea40b3ac33f56945bd3
+  - enabled: 1
+    path: Assets/Scenes/3Player/Game 1/WinnerGame1.unity
+    guid: ad0ec8acef8a8eb4db23583a6396d031
+  - enabled: 1
+    path: Assets/Scenes/3Player/Bracket2_3P.unity
+    guid: c28241dfaccd7fa4181b2928a43bcce7
+  - enabled: 1
+    path: Assets/Scenes/3Player/Game 2/Game 2.unity
+    guid: b7abc95bce3254e42ae83d717df24f8a
+  - enabled: 1
+    path: Assets/Scenes/3Player/Game 2/WinnerGame2_3P.unity
+    guid: 588d71cd9189b784e99da6f142159001
   - enabled: 1
     path: Assets/Scenes/4Player/4Player.unity
     guid: 7b05ee7cfc08d0e499c7236467f0b867
   - enabled: 1
-    path: Assets/Scenes/4Player/4PlayerBracketDisplay.unity
-    guid: 9c3a72b9ac983564da3a15d5dbf8fc82
+    path: Assets/Scenes/4Player/Bracket1_4P.unity
+    guid: 12f146565e5abff4c9cdead299bd97d7
+  - enabled: 1
+    path: Assets/Scenes/4Player/Game 1/Game1_4P.unity
+    guid: 11ab26d9d065f2e48b1a5c7e4bc30bd7
+  - enabled: 1
+    path: Assets/Scenes/4Player/Game 1/WinnerGame1_4P.unity
+    guid: 9c588b9327345044ba742242e2b45006
+  - enabled: 1
+    path: Assets/Scenes/4Player/Bracket2_4P.unity
+    guid: e2236482d2861974cad175dfdbe45f83
+  - enabled: 1
+    path: Assets/Scenes/4Player/Game 2/Game2_4P.unity
+    guid: 77fb0a00f2c82714083b8b15041bb9e3
+  - enabled: 1
+    path: Assets/Scenes/4Player/Game 2/WinnerGame2_4P.unity
+    guid: f527fb48bfb9fd046a542526197cec6f
+  - enabled: 1
+    path: Assets/Scenes/4Player/Bracket3_4P.unity
+    guid: 5659f2fc2b584db4da3861d6aae2e2ba
+  - enabled: 1
+    path: Assets/Scenes/4Player/Game 3/Game3_4P.unity
+    guid: 704b4a157eaa43d49a834373be7320ec
+  - enabled: 1
+    path: Assets/Scenes/4Player/Game 3/WinnerGame3_4P.unity
+    guid: 01bddd124efca9a47b2d7c84bb28d174
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/5Player/5Player.unity
     guid: cbf7138c1be7d0a488505fba0320dcb9
@@ -53,21 +101,6 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/3Player/Game 1/Game 1.unity
-    guid: 52c156cf6861cea40b3ac33f56945bd3
-  - enabled: 1
-    path: Assets/Scenes/3Player/Game 1/WinnerGame1.unity
-    guid: ad0ec8acef8a8eb4db23583a6396d031
-  - enabled: 1
-    path: Assets/Scenes/3Player/Game 2/Game 2.unity
-    guid: b7abc95bce3254e42ae83d717df24f8a
-  - enabled: 1
-    path: Assets/Scenes/3Player/Game 2/WinnerGame2.unity
-    guid: 588d71cd9189b784e99da6f142159001
-  - enabled: 1
-    path: Assets/Scenes/OverallWinner.unity
-    guid: b914727034a10bd4e9912903d2611180
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

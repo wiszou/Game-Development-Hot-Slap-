@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &93394935
+--- !u!1 &280510281
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,79 +131,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 93394937}
-  - component: {fileID: 93394936}
+  - component: {fileID: 280510283}
+  - component: {fileID: 280510284}
   m_Layer: 0
-  m_Name: FightingHandlerGame2
+  m_Name: Game2Manager_3P
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &93394936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93394935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a527a4aeeb9b2c4089b71192b633821, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerOneName: {fileID: 590663900}
-  playerTwoName: {fileID: 2041360151}
-  playerThreeName: {fileID: 0}
-  playerFourName: {fileID: 0}
-  playerFiveName: {fileID: 0}
-  playerSixName: {fileID: 0}
-  playerOneHPUI: {fileID: 1785647944}
-  playerTwoHPUI: {fileID: 718052598}
-  playerOneHP: 0
-  playerTwoHP: 0
---- !u!4 &93394937
+--- !u!4 &280510283
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93394935}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 540.01135, y: 259.93027, z: -5.2703958}
+  m_GameObject: {fileID: 280510281}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 590.43805, y: 240.69017, z: -8.4218235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &416466317
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 416466319}
-  - component: {fileID: 416466318}
-  m_Layer: 0
-  m_Name: Game2Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &416466318
+--- !u!114 &280510284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416466317}
+  m_GameObject: {fileID: 280510281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 973d6194b276d154ab2ea482edde0691, type: 3}
+  m_Script: {fileID: 11500000, guid: e8325d52a9c3d0e4f9c57204d6a66865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animatorPlayerAttk: {fileID: 1318070621}
@@ -224,23 +185,8 @@ MonoBehaviour:
   energyGainPerHit: 10
   energyCostPerUlti: 50
   ultimateAttackEnabled: 0
-  FightingHandlerGame2: {fileID: 93394936}
+  Fighting2Handler_3P: {fileID: 978681888}
   deathAnimationDuration: 0.3
---- !u!4 &416466319
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416466317}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 542.48065, y: 261.40097, z: -4.2317977}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &418480641
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,6 +768,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &978681887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 978681889}
+  - component: {fileID: 978681888}
+  m_Layer: 0
+  m_Name: Fighting2Handler_3P
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &978681888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978681887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65f5ea7f044bce489d560d0b2a4b3f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOneName: {fileID: 590663900}
+  playerTwoName: {fileID: 2041360151}
+  playerThreeName: {fileID: 0}
+  playerFourName: {fileID: 0}
+  playerFiveName: {fileID: 0}
+  playerSixName: {fileID: 0}
+  playerOneHPUI: {fileID: 1785647944}
+  playerTwoHPUI: {fileID: 718052598}
+  playerOneHP: 0
+  playerTwoHP: 0
+--- !u!4 &978681889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978681887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 590.43805, y: 240.69017, z: -8.4218235}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1223878643
 GameObject:

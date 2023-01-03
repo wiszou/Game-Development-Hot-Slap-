@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
-public class fightingHandler : MonoBehaviour
+public class FightingHandler_3P : MonoBehaviour
 {   
     public static List<string> Winners;
     public TextMeshProUGUI playerOneName;
@@ -52,7 +52,7 @@ public class fightingHandler : MonoBehaviour
         {
             NameHandler.winner = 1;
             yield return new WaitForSeconds(.1f);
-            SceneManager.LoadScene("OverallWinner");
+            SceneManager.LoadScene("WinnerGame1");
            
 
         }
@@ -61,7 +61,7 @@ public class fightingHandler : MonoBehaviour
         {
             NameHandler.winner = 0;
             yield return new WaitForSeconds(.1f);
-            SceneManager.LoadScene("OverallWinner");
+            SceneManager.LoadScene("WinnerGame1");
         }
 
 

@@ -75,39 +75,5 @@ public class NameHandler : MonoBehaviour
         playerNames.Add(name);
         Debug.Log("Added name to playerNames list: " + name);
     }
-       
-
-   
-    
-    
-     public void OnClick2Player()
-    {
-        SceneManager.LoadScene("GAME SCENE");
-    }
-      public void OnClick3Player()
-    {
-        SceneManager.LoadScene("3PlayerBracketDisplay");
-    }
-      public void OnClick4Player()
-    {
-        SceneManager.LoadScene("4PlayerBracketDisplay");
-    }
-      public void OnClick5Player()
-    {
-        SceneManager.LoadScene("5PlayerBracketDisplay");
-    }
-      public void OnClick6Player()
-    {
-        SceneManager.LoadScene("6PlayerBracketDisplay");
-    }
-
-    public void OnClickGame1Bracket()
-    {
-        SceneManager.LoadScene("3PlayerBracket");
-    }
-    public void OnClickGame1()
-    {
-        SceneManager.LoadScene("Game 1");
-    }
 
 }

@@ -51,15 +51,21 @@ public class WinnerGame1 : MonoBehaviour
 
     }
 
-    //CONTINUE TO GAME 2
+    //3 PLAYERS
     public void OnClickGame2()
     {
         SceneManager.LoadScene("Game 1");
     }
 
-     public void OnClickGame1Bracket()
+     public void OnClickNextMatch()
     {
-        SceneManager.LoadScene("3PlayerBracketDisplay");
+        SceneManager.LoadScene("Bracket2_3P");
     }
     
+    // 4 PLAYERS
+    public void OnClickGame2_4P()
+    {
+        SceneManager.LoadScene("Bracket2_4P");
+    }
 }
+

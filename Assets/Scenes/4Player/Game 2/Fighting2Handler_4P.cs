@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
-public class fightingHandler : MonoBehaviour
+public class Fighting2Handler_4P : MonoBehaviour
 {   
     public static List<string> Winners;
     public TextMeshProUGUI playerOneName;
@@ -17,15 +17,14 @@ public class fightingHandler : MonoBehaviour
     public TextMeshProUGUI playerSixName;
     public TextMeshProUGUI playerOneHPUI;
     public TextMeshProUGUI playerTwoHPUI;
-
  
     public int playerOneHP;
     public int playerTwoHP;
 
     void Awake()
     {
-        playerOneName.text = NameHandler.playerNames[0];
-        playerTwoName.text = NameHandler.playerNames[1];
+        playerOneName.text = NameHandler.playerNames[2];
+        playerTwoName.text = NameHandler.playerNames[3];
         playerOneHP = NameHandler.playerHP;
         playerTwoHP = NameHandler.playerHP;
     }
@@ -47,12 +46,12 @@ public class fightingHandler : MonoBehaviour
     IEnumerator healthChecker()
     {   
 
-        //GAME 1
+        //Game 1
         if (playerOneHP <= 0)
         {
             NameHandler.winner = 1;
             yield return new WaitForSeconds(.1f);
-            SceneManager.LoadScene("OverallWinner");
+            SceneManager.LoadScene("WinnerGame2_4P");
            
 
         }
@@ -61,11 +60,10 @@ public class fightingHandler : MonoBehaviour
         {
             NameHandler.winner = 0;
             yield return new WaitForSeconds(.1f);
-            SceneManager.LoadScene("OverallWinner");
+            SceneManager.LoadScene("WinnerGame2_4P");
         }
 
-
-
+        
         
 
     }
