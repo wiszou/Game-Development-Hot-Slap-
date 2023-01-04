@@ -13,7 +13,8 @@ public class FightingHandler_2P : MonoBehaviour
     public TextMeshProUGUI playerTwoName;
     public TextMeshProUGUI playerOneHPUI;
     public TextMeshProUGUI playerTwoHPUI;
-
+    private GameManager_2P gameManager;
+    public int energyGainPerHit = 10; // Change 10 to the desired energy gain value
  
     public int playerOneHP;
     public int playerTwoHP;
@@ -29,6 +30,7 @@ public class FightingHandler_2P : MonoBehaviour
     void Start()
     {
         Winners = new List<string>();
+        gameManager = GetComponent<GameManager_2P>();
     }
 
     // Update is called once per frame
@@ -39,6 +41,21 @@ public class FightingHandler_2P : MonoBehaviour
         playerTwoHPUI.text = playerTwoHP + "";
         StartCoroutine(healthChecker());
     }
+    public void TakeDamage(int damage)
+{
+    // Decrease the player's health by the specified amount
+    playerTwoHP -= damage;
+
+    // Add energy to player one's energy
+    gameManager.playerOneEnergy += energyGainPerHit;
+
+    // Print a debug log message
+    Debug.Log("Energy gained: " + energyGainPerHit);
+
+    // Update the UI text element to show the updated health value
+    playerTwoHPUI.text = playerTwoHP + "";
+}
+
 
     IEnumerator healthChecker()
     {   
