@@ -74,5 +74,15 @@ public class WinnerGame2  : MonoBehaviour
         SceneManager.LoadScene("Bracket3_4P");
     }
 
-    
+    //5 PLAYERS
+    public void OnClickGame2Bracket_5P()
+    {
+        SceneManager.LoadScene("Bracket3_5P");
+    }
+
+    //6 PLAYERS
+    public void OnClickGame2Bracket_6P()
+    {
+        SceneManager.LoadScene("Bracket3_6P");
+    }
 }

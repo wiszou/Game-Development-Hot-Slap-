@@ -77,21 +77,105 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/4Player/Game 3/WinnerGame3_4P.unity
     guid: 01bddd124efca9a47b2d7c84bb28d174
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/5Player/5Player.unity
-    guid: cbf7138c1be7d0a488505fba0320dcb9
+    guid: 31052ac7ec2f7e142ac12cee12859fa9
   - enabled: 1
-    path: Assets/Scenes/5Player/5PlayerBracketDisplay.unity
-    guid: 515a2c3c65ea29a4d9ff38eebad868c6
+    path: Assets/Scenes/5Player/Bracket1_5P.unity
+    guid: b950522f7fdedf8479c32b5bbc57f7d6
+  - enabled: 1
+    path: Assets/Scenes/5Player/Game 1/Game1_5P.unity
+    guid: 271310b56a0bfd24bb4a432e75f4ea27
+  - enabled: 1
+    path: Assets/Scenes/5Player/Game 1/WinnerGame1_5P.unity
+    guid: e3552c61b3a7bd844afe314727a169c7
+  - enabled: 1
+    path: Assets/Scenes/5Player/Bracket2_5P.unity
+    guid: 5f6254796f6f3ce4ab27265850e4b5a9
+  - enabled: 1
+    path: Assets/Scenes/5Player/Game 2/Game2_5P.unity
+    guid: 814584d28bec701449a7e13e060cc0cd
+  - enabled: 1
+    path: Assets/Scenes/5Player/Game 2/WinnerGame2_5P.unity
+    guid: ade6aeccbfd742344b8135655677dfc9
+  - enabled: 1
+    path: Assets/Scenes/5Player/Bracket3_5P.unity
+    guid: 999796092ca78b24b9fc7104e3a449cc
+  - enabled: 1
+    path: Assets/Scenes/5Player/Game 3/Game3_5P.unity
+    guid: e3fd31388f446d1499a4b0d6b5471d15
+  - enabled: 1
+    path: Assets/Scenes/5Player/Game 3/WinnerGame3_5P.unity
+    guid: 32ba2d1dc16779944b1aa77b7b3b583b
+  - enabled: 1
+    path: Assets/Scenes/5Player/Bracket4_5P.unity
+    guid: 07af1ac6327ce3e42bbd685be1758d78
+  - enabled: 1
+    path: Assets/Scenes/5Player/Game 4/Game4_5P.unity
+    guid: 9da599c019283b8499ca25c1ac42d53a
+  - enabled: 1
+    path: Assets/Scenes/5Player/Game 4/WinnerGame4_5P.unity
+    guid: be1253b31900f7e4a94c92b04ebbb801
   - enabled: 1
     path: Assets/Scenes/6Player/6Player.unity
     guid: db18dc1c74aca944094b2d5cae241d44
   - enabled: 1
-    path: Assets/Scenes/6Player/6PlayerBracketDisplay.unity
-    guid: e29621f4bfcf2d3498fb4ec170103dea
+    path: Assets/Scenes/6Player/Bracket1_6P.unity
+    guid: 6e4e6901bb9e3e9438e5a2a17c3079ce
+  - enabled: 1
+    path: Assets/Scenes/6Player/Game 1/Game1_6P.unity
+    guid: 35bd6d35b82adf84ba55eb363f9de3d7
+  - enabled: 1
+    path: Assets/Scenes/6Player/Game 1/WinnerGame1_6P.unity
+    guid: 996c0226dca7e3547a279be93799bd76
+  - enabled: 1
+    path: Assets/Scenes/6Player/Bracket2_6P.unity
+    guid: bb7065ab87ae4114e8731b57e65b4907
+  - enabled: 1
+    path: Assets/Scenes/6Player/Game 2/Game2_6P.unity
+    guid: 603c0f6419ee80349ae1cecb3184398c
+  - enabled: 1
+    path: Assets/Scenes/6Player/Game 2/WinnerGame2_6P.unity
+    guid: 8d3b9baff53357142ab7dd312a3ba4ec
+  - enabled: 1
+    path: Assets/Scenes/6Player/Bracket3_6P.unity
+    guid: 5e2b28387986701498823439dd470dc9
+  - enabled: 1
+    path: Assets/Scenes/6Player/Game 3/Game3_6P.unity
+    guid: 70210af77c34ee54f900cbe27c5b724c
+  - enabled: 1
+    path: Assets/Scenes/6Player/Game 3/WinnerGame3_6P.unity
+    guid: f8b4773df03057a419fc6702a02af013
+  - enabled: 1
+    path: Assets/Scenes/6Player/Bracket4_6P.unity
+    guid: 5ca7d45b613f50d41860690c1d81edc0
+  - enabled: 1
+    path: Assets/Scenes/6Player/Game 4/Game4_6P.unity
+    guid: 943317bbf58400542981f6f46fbff357
+  - enabled: 1
+    path: Assets/Scenes/6Player/Game 4/WinnerGame4_6P.unity
+    guid: 925191e71ef85304ead5e35204487d22
+  - enabled: 1
+    path: Assets/Scenes/6Player/Bracket5_6P.unity
+    guid: 5cbf1cc53195a364dbc53a3b026c061b
+  - enabled: 1
+    path: Assets/Scenes/6Player/Game 5/Game5_6P.unity
+    guid: 305a1a4e43407fd45a661073b167cfb6
+  - enabled: 1
+    path: Assets/Scenes/6Player/Game 5/WinnerGame5_6P.unity
+    guid: 86de19d0278714e49bb58481869c896e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/5Player/5PlayerBracketDisplay.unity
+    guid: 515a2c3c65ea29a4d9ff38eebad868c6
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
