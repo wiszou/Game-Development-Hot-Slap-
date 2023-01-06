@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager_2P : MonoBehaviour
 {
 
@@ -21,7 +22,7 @@ public class GameManager_2P : MonoBehaviour
     public GameObject enemy1; // The enemy being attack
     public int playerOneEnergy = 0; // Player 1's starting energy
     public int playerTwoEnergy = 0; // Player 2's starting energy
-    public int energyGainPerHit = 10; // The amount of energy gained by a player when they hit the enemy
+    public int energyGainPerHit = 10; // Change 10 to the desired energy gain value
     public int energyCostPerUlti = 50; // The amount of energy required to use the ultimate attack
     public bool ultimateAttackEnabled = false; // Flag to track if the ultimate attack is enabled for the player
     public FightingHandler_2P fightingHandler_2P; // Add a reference to the fightingHandler_2P script
@@ -192,10 +193,33 @@ public class GameManager_2P : MonoBehaviour
 
     IEnumerator WaitForUltiE()
     {
-    // Attack the enemy with the ultimate attack
-    AttackEnemyUlti(enemy1);
-    // Wait for the ultimate attack animation to finish
-    yield return new WaitForSeconds(ultiDuration);
+    // Check if the player has enough energy to use the ultimate attack
+    if (playerOneEnergy >= energyCostPerUlti && ultimateAttackEnabled)
+    {
+        // Subtract the energy cost from the player's energy
+        playerOneEnergy -= energyCostPerUlti;
+
+        // Trigger the ultimate attack animation
+        animatorPlayerUlti.SetTrigger("Ulti");
+
+        // Wait for the ultimate attack animation to finish
+        yield return new WaitForSeconds(ultiDuration);
+
+        // Check if the enemy dodged
+        if (!enemyDodged)
+        {
+            // Apply the ultimate attack damage to the enemy
+            enemy1.GetComponent<FightingHandler_2P>().TakeDamage(ultiPower);
+        }
+
+        // Reset the enemy dodged flag
+        enemyDodged = false;
+    }
+    else
+    {
+        // Notify the player that they don't have enough energy to use the ultimate attack
+        Debug.Log("Not enough energy to use ultimate attack");
+    }
     // Allow the other player to make a move
     isPlayer1Turn = true;
     }
