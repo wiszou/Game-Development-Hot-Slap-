@@ -39,7 +39,7 @@ AnimatorStateMachine:
     m_Position: {x: 460, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8450356093808735276}
-    m_Position: {x: 550, y: 240, z: 0}
+    m_Position: {x: 660, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4839910121696073668}
     m_Position: {x: 440, y: -130, z: 0}
@@ -266,7 +266,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ulti ni Brown
-  m_Speed: 3
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7033979399680180768}

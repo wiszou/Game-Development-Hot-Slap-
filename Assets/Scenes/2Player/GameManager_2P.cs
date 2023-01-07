@@ -170,7 +170,7 @@ public class GameManager_2P : MonoBehaviour
         playerOneEnergy -= energyCostPerUlti;
         Debug.Log("Ult succesfully used");
         // Start the ultimate attack animation and wait for it to finish
-        animatorPlayerUlti.SetBool("Attack", true);
+        animatorPlayerUlti.SetBool("Ulti", true);
         }
     }
     // Attack the player with the ultimate attack
@@ -185,13 +185,9 @@ public class GameManager_2P : MonoBehaviour
         playerTwoEnergy -= energyCostPerUlti;
         Debug.Log("Ult succesfully used");
         // Start the ultimate attack animation and wait for it to finish
-        animatorEnemyUlti.SetBool("Attack", true);
+        animatorEnemyUlti.SetBool("Ulti", true);
         }
     }
-
-
-
-
 
     IEnumerator WaitForUltiE()
     {
@@ -215,11 +211,6 @@ public class GameManager_2P : MonoBehaviour
     isPlayer1Turn = true;
     }
     
-
-
-
- 
-
     IEnumerator WaitForAttackQ()
         {
         animatorPlayerAttk.SetTrigger("Attack");

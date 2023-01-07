@@ -790,7 +790,7 @@ MonoBehaviour:
   energyCostPerUlti: 50
   ultimateAttackEnabled: 0
   fightingHandler_2P: {fileID: 1940580917}
-  deathAnimationDuration: 0.3
+  deathAnimationDuration: 1
 --- !u!4 &1009282815
 Transform:
   m_ObjectHideFlags: 0
