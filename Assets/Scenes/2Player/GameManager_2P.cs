@@ -44,7 +44,6 @@ public class GameManager_2P : MonoBehaviour
             {
                 isPlayer1Turn = false;
                 StartCoroutine(WaitForAttackQ());
-                Debug.Log("Attack Hit!");
             }
         }
         // Otherwise, it's player 2's turn
@@ -112,6 +111,8 @@ public class GameManager_2P : MonoBehaviour
         }
     }
 
+
+
     // Attack the enemy
     public void AttackEnemy(GameObject other)
     {
@@ -119,7 +120,6 @@ public class GameManager_2P : MonoBehaviour
         fightingHandler_2P.playerTwoHP -= attackPower;
         // Increase the player's energy
         playerOneEnergy += energyGainPerHit;
-        Debug.Log("Energy gain!");
         // Check if the player's energy has reached the required amount for the ultimate attack
     if (playerOneEnergy >= energyCostPerUlti)
         {
@@ -168,6 +168,7 @@ public class GameManager_2P : MonoBehaviour
         fightingHandler_2P.playerTwoHP -= ultiPower;
         // Decrease the player's energy
         playerOneEnergy -= energyCostPerUlti;
+        Debug.Log("Ult succesfully used");
         // Start the ultimate attack animation and wait for it to finish
         animatorPlayerUlti.SetBool("Attack", true);
         }
@@ -182,6 +183,7 @@ public class GameManager_2P : MonoBehaviour
         fightingHandler_2P.playerOneHP -= ultiPower;
         // Decrease the player's energy
         playerTwoEnergy -= energyCostPerUlti;
+        Debug.Log("Ult succesfully used");
         // Start the ultimate attack animation and wait for it to finish
         animatorEnemyUlti.SetBool("Attack", true);
         }
@@ -193,36 +195,16 @@ public class GameManager_2P : MonoBehaviour
 
     IEnumerator WaitForUltiE()
     {
-    // Check if the player has enough energy to use the ultimate attack
-    if (playerOneEnergy >= energyCostPerUlti && ultimateAttackEnabled)
-    {
-        // Subtract the energy cost from the player's energy
-        playerOneEnergy -= energyCostPerUlti;
-
-        // Trigger the ultimate attack animation
-        animatorPlayerUlti.SetTrigger("Ulti");
-
-        // Wait for the ultimate attack animation to finish
-        yield return new WaitForSeconds(ultiDuration);
-
-        // Check if the enemy dodged
-        if (!enemyDodged)
-        {
-            // Apply the ultimate attack damage to the enemy
-            enemy1.GetComponent<FightingHandler_2P>().TakeDamage(ultiPower);
-        }
-
-        // Reset the enemy dodged flag
-        enemyDodged = false;
-    }
-    else
-    {
-        // Notify the player that they don't have enough energy to use the ultimate attack
-        Debug.Log("Not enough energy to use ultimate attack");
-    }
+   // Attack the player with the ultimate attack
+    AttackEnemyUlti(enemy1);
+    // Wait for the ultimate attack animation to finish
+    yield return new WaitForSeconds(ultiDuration);
     // Allow the other player to make a move
     isPlayer1Turn = true;
     }
+
+
+
     IEnumerator WaitForUlti3()
     {
     // Attack the player with the ultimate attack
