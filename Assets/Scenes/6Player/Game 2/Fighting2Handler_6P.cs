@@ -17,6 +17,8 @@ public class Fighting2Handler_6P : MonoBehaviour
     public TextMeshProUGUI playerSixName;
     public TextMeshProUGUI playerOneHPUI;
     public TextMeshProUGUI playerTwoHPUI;
+    public Slider healthBarSliderP1;
+    public Slider healthBarSliderP2;
  
     public int playerOneHP;
     public int playerTwoHP;
@@ -37,9 +39,12 @@ public class Fighting2Handler_6P : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         playerOneHPUI.text = playerOneHP + "";
         playerTwoHPUI.text = playerTwoHP + "";
+
+        // Update the health bar to reflect the current health of the player
+        healthBarSliderP1.value = playerOneHP / (float)NameHandler.playerHP;
+        healthBarSliderP2.value = playerTwoHP / (float)NameHandler.playerHP;
         StartCoroutine(healthChecker());
     }
 

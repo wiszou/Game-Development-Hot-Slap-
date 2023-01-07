@@ -15,6 +15,8 @@ public class FightingHandler_2P : MonoBehaviour
     public TextMeshProUGUI playerTwoHPUI;
     private GameManager_2P gameManager;
     public int energyGainPerHit = 10; // Change 10 to the desired energy gain value
+    public Slider healthBarSliderP1;
+    public Slider healthBarSliderP2;
  
     public int playerOneHP;
     public int playerTwoHP;
@@ -36,9 +38,12 @@ public class FightingHandler_2P : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         playerOneHPUI.text = playerOneHP + "";
         playerTwoHPUI.text = playerTwoHP + "";
+
+        // Update the health bar to reflect the current health of the player
+        healthBarSliderP1.value = playerOneHP / (float)NameHandler.playerHP;
+        healthBarSliderP2.value = playerTwoHP / (float)NameHandler.playerHP;
         StartCoroutine(healthChecker());
     }
     public void TakeDamage(int damage)

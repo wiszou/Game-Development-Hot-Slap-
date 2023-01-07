@@ -286,7 +286,7 @@ public class GameManager_2P : MonoBehaviour
         Destroy(player1);
 
         // Transition to the next scene to reveal the winner
-        SceneManager.LoadScene("WinnerScene");
+        SceneManager.LoadScene("OverallWinner");
         }
 
     IEnumerator DeathSequence2(GameObject enemy1)
@@ -296,6 +296,6 @@ public class GameManager_2P : MonoBehaviour
         // Destroy the character game object
         Destroy(enemy1);
         // Transition to the next scene to reveal the winner
-        SceneManager.LoadScene("WinnerScene");
+        SceneManager.LoadScene("OverallWinner");
         }
 }
