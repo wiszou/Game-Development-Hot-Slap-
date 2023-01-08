@@ -6,34 +6,34 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 55530000550d5a0a080f5b71157309444f154c2e7e7b2034282c1b60bbb9316a
-      flags: 0
-    RecentlyUsedSceneGuid-1:
-      value: 0206520450570f090c5d597b43200b441416402e7d7d71627b714e62b5b23060
-      flags: 0
-    RecentlyUsedSceneGuid-2:
-      value: 5603575750030a5d5b565a7313265e4446154b2b2f7b7536787f4467b7e2306b
-      flags: 0
-    RecentlyUsedSceneGuid-3:
       value: 02550403060d08580808542348265d4412154a79797075317b7a4465e6b06769
       flags: 0
-    RecentlyUsedSceneGuid-4:
-      value: 54525250060d500a5b0b5c2347705b441216192f7b7f22657c2f4537e0e63769
-      flags: 0
-    RecentlyUsedSceneGuid-5:
+    RecentlyUsedSceneGuid-1:
       value: 0508520551025e5e090b59754727064445164b7f7c7e24357f2b1b63bbe66468
       flags: 0
-    RecentlyUsedSceneGuid-6:
+    RecentlyUsedSceneGuid-2:
+      value: 54525250060d500a5b0b5c2347705b441216192f7b7f22657c2f4537e0e63769
+      flags: 0
+    RecentlyUsedSceneGuid-3:
       value: 0501060050510a0e0b5d5e77497307444f1648282e7a20662f7a1f30bae16c6a
       flags: 0
-    RecentlyUsedSceneGuid-7:
+    RecentlyUsedSceneGuid-4:
+      value: 5200565751540c0a5f5f5c7048725c4415154c797c7d23342c784a36bbb56168
+      flags: 0
+    RecentlyUsedSceneGuid-5:
       value: 0108055252075e0b5e5a0d7340215b44134e417b7e717663297b4b62b3b16c68
       flags: 0
-    RecentlyUsedSceneGuid-8:
+    RecentlyUsedSceneGuid-6:
       value: 5254040553025b5f555a0f7441225c441516497c2e7f71682f7f1f6ab4e1676c
       flags: 0
+    RecentlyUsedSceneGuid-7:
+      value: 0206520450570f090c5d597b43200b441416402e7d7d71627b714e62b5b23060
+      flags: 0
+    RecentlyUsedSceneGuid-8:
+      value: 01065504060c5c590e0b5f7045775a4444161d727f2c71617a2d1b61b6e66c39
+      flags: 0
     RecentlyUsedSceneGuid-9:
-      value: 5200565751540c0a5f5f5c7048725c4415154c797c7d23342c784a36bbb56168
+      value: 56090c0252040a5f545f547b12740744134e412e2d7e2061797b4c66bbb06469
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
