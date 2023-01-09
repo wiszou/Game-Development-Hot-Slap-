@@ -60,4 +60,13 @@ public class WinnerGame5_6P : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    //QUIT 
+
+     public void QuitGame()
+        {
+            Application.Quit();
+            Debug.Log("Exit");
+        }
+    
+
 }

@@ -75,4 +75,10 @@ public class WinnerGame3 : MonoBehaviour
         SceneManager.LoadScene("Bracket4_5P");
     }
 
+     public void QuitGame()
+        {
+            Application.Quit();
+            Debug.Log("Exit");
+        }
+    
 }

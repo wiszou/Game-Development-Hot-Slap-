@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager_3P : MonoBehaviour
 {
@@ -26,18 +27,36 @@ public class GameManager_3P : MonoBehaviour
     public bool ultimateAttackEnabled = false; // Flag to track if the ultimate attack is enabled for the player
     public FightingHandler_3P FightingHandler_3P; // Add a reference to the FightingHandler_3P script
 
-    // Flag to track whose turn it is
+    public Image player1TurnIndicator;
+    public Image player2TurnIndicator;
     private bool isPlayer1Turn = true;
     private bool enemyDodged = false;
     private bool dodgeButtonDisabled = false;
     private float dodgeButtonTimer = 0f;
     public float deathAnimationDuration = 0.3f;
 
+
+
+    void Start()
+    {
+
+        player1TurnIndicator.gameObject.SetActive(false);
+        player2TurnIndicator.gameObject.SetActive(false);
+
+    }
     void Update()
     {
         // Check if it's player 1's turn
         if (isPlayer1Turn)
         {
+            // Show the player 1 turn indicator and set the color to green
+            player1TurnIndicator.gameObject.SetActive(true);
+            player1TurnIndicator.color = Color.green;
+
+            // Hide the player 2 turn indicator
+            player2TurnIndicator.gameObject.SetActive(false);
+
+
             // Check if player 1 has made their move
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -47,7 +66,13 @@ public class GameManager_3P : MonoBehaviour
         }
         // Otherwise, it's player 2's turn
         else
-        {
+        {   
+            player2TurnIndicator.gameObject.SetActive(true);
+            player2TurnIndicator.color = Color.green;
+
+            // Hide the player 1 turn indicator
+            player1TurnIndicator.gameObject.SetActive(false);
+
             // Check if player 2 has made their move
             if (Input.GetKeyDown(KeyCode.Keypad1))
             {
