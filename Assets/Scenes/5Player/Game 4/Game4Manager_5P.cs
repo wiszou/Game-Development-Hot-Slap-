@@ -88,7 +88,7 @@ public class Game4Manager_5P : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad3))
         {
-            isPlayer1Turn = false;
+            isPlayer1Turn = true;
             StartCoroutine(WaitForUlti3());
         }
 
@@ -225,7 +225,7 @@ public class Game4Manager_5P : MonoBehaviour
     // Wait for the ultimate attack animation to finish
     yield return new WaitForSeconds(ultiDuration);
     // Allow the other player to make a move
-    isPlayer1Turn = true;
+    isPlayer1Turn = false;
     }
 
 

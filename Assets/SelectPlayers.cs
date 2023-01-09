@@ -22,28 +22,24 @@ public class SelectPlayers : MonoBehaviour
         if (index == 1)
         {
             SceneManager.LoadScene("2Player");
-            BGMusic.instance.GetComponent<AudioSource>().Pause();
+
 
         }
         else if (index == 2)
         {
             SceneManager.LoadScene("3Player");
-            BGMusic.instance.GetComponent<AudioSource>().Pause();
         }
         else if (index == 3)
         {
             SceneManager.LoadScene("4Player");
-            BGMusic.instance.GetComponent<AudioSource>().Pause();
         }
          else if (index == 4)
         {
             SceneManager.LoadScene("5Player");
-            BGMusic.instance.GetComponent<AudioSource>().Pause();
         }
          else if (index == 5)
         {
             SceneManager.LoadScene("6Player");
-            BGMusic.instance.GetComponent<AudioSource>().Pause();
         }
       
     }

@@ -58,7 +58,6 @@ public class GameManager_2P : MonoBehaviour
             // Hide the player 2 turn indicator
             player2TurnIndicator.gameObject.SetActive(false);
 
-
             // Check if player 1 has made their move
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -89,7 +88,7 @@ public class GameManager_2P : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad3))
         {
-            isPlayer1Turn = false;
+            isPlayer1Turn = true;
             StartCoroutine(WaitForUlti3());
         }
 
@@ -136,7 +135,6 @@ public class GameManager_2P : MonoBehaviour
         StartCoroutine(DeathSequence2(enemy1));
         }
     }
-
 
 
     // Attack the enemy
@@ -222,10 +220,8 @@ public class GameManager_2P : MonoBehaviour
     // Wait for the ultimate attack animation to finish
     yield return new WaitForSeconds(ultiDuration);
     // Allow the other player to make a move
-    isPlayer1Turn = true;
+    isPlayer1Turn = false;
     }
-
-
 
     IEnumerator WaitForUlti3()
     {
