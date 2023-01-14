@@ -17,6 +17,8 @@ public class FightingHandler_2P : MonoBehaviour
     public int energyGainPerHit = 10; // Change 10 to the desired energy gain value
     public Slider healthBarSliderP1;
     public Slider healthBarSliderP2;
+    public Slider ultimateEnergySliderP1;
+    public Slider ultimateEnergySliderP2;
  
     public int playerOneHP;
     public int playerTwoHP;
@@ -45,21 +47,35 @@ public class FightingHandler_2P : MonoBehaviour
         healthBarSliderP1.value = playerOneHP / (float)NameHandler.playerHP;
         healthBarSliderP2.value = playerTwoHP / (float)NameHandler.playerHP;
         StartCoroutine(healthChecker());
+        
+        // Increase the player 1 ultimate energy by the energy gain per hit value
+        gameManager.playerOneEnergy += energyGainPerHit;
+        // Update the value of the ultimate energy slider
+        ultimateEnergySliderP1.value = gameManager.playerOneEnergy;
+
+        // Increase the player 2 ultimate energy by the energy gain per hit value
+        gameManager.playerTwoEnergy += energyGainPerHit;
+        // Update the value of the ultimate energy slider
+        ultimateEnergySliderP2.value = gameManager.playerTwoEnergy;
     }
+
     public void TakeDamage(int damage)
-{
+    {
     // Decrease the player's health by the specified amount
     playerTwoHP -= damage;
+    playerOneHP -= damage;
 
     // Add energy to player one's energy
     gameManager.playerOneEnergy += energyGainPerHit;
-
-    // Print a debug log message
-    Debug.Log("Energy gained: " + energyGainPerHit);
+    gameManager.playerTwoEnergy += energyGainPerHit;
 
     // Update the UI text element to show the updated health value
+    playerOneHPUI.text = playerOneHP + "";
     playerTwoHPUI.text = playerTwoHP + "";
-}
+
+      // Print a debug log message
+    Debug.Log("Energy gained: " + energyGainPerHit);
+    }
 
 
     IEnumerator healthChecker()
