@@ -50,7 +50,7 @@ public class GameManager_2P : MonoBehaviour
     {
         // Check if it's player 1's turn
         if (isPlayer1Turn)
-        {
+        {   
             // Show the player 1 turn indicator and set the color to green
             player1TurnIndicator.gameObject.SetActive(true);
             player1TurnIndicator.color = Color.green;
@@ -81,6 +81,19 @@ public class GameManager_2P : MonoBehaviour
                 StartCoroutine(WaitForAttack1());
             }
         }
+
+
+        if (isPlayer1Turn)
+            {
+                dodgeButtonDisabled = false;
+            }
+        else
+            {
+                dodgeButtonDisabled = true;
+            }
+
+
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             isPlayer1Turn = false;
@@ -95,7 +108,7 @@ public class GameManager_2P : MonoBehaviour
         if (Input.GetKey(KeyCode.Keypad2) && !dodgeButtonDisabled)
             {
                 // Disable the dodge button to prevent spamming
-            dodgeButtonDisabled = true;
+                dodgeButtonDisabled = true;
                 // Set the flag to indicate that the enemy has dodged
                 enemyDodged = true;
                 // Start the dodge animation and wait for it to finish
@@ -105,9 +118,9 @@ public class GameManager_2P : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && !dodgeButtonDisabled)
         {
                 // Disable the dodge button to prevent spamming
-             dodgeButtonDisabled = true;
+             dodgeButtonDisabled = false;
                 // Set the flag to indicate that the enemy has dodged
-            enemyDodged = true;
+                enemyDodged = true;
                 // Start the dodge animation and wait for it to finish
             animatorPlayerDodge.SetTrigger("Dodge");
             StartCoroutine(WaitForDodgeW());
