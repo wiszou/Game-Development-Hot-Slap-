@@ -1472,28 +1472,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57cd7e4d9a3278145b784372a1c4f41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fightingHandler_2P: {fileID: 1940580917}
   animatorPlayerAttk: {fileID: 1318070621}
   animatorPlayerDodge: {fileID: 1318070621}
   animatorEnemyAttk: {fileID: 1223878651}
   animatorEnemyDodge: {fileID: 1223878651}
   animatorPlayerUlti: {fileID: 1318070621}
   animatorEnemyUlti: {fileID: 1223878651}
-  ultiDuration: 1
-  ultiPower: 30
-  dodgeDuration: 0.9
-  attackDuration: 0.2
-  attackPower: 10
   player1: {fileID: 1318070612}
   enemy1: {fileID: 1223878643}
+  player1TurnIndicator: {fileID: 679528744}
+  player2TurnIndicator: {fileID: 2004430646}
+  dodgeDuration: 0.9
+  attackDuration: 0.2
+  ultiDuration: 1
+  deathAnimationDuration: 1
+  ultiPower: 30
+  attackPower: 10
   playerOneEnergy: 0
   playerTwoEnergy: 0
   energyGainPerHit: 10
   energyCostPerUlti: 50
   ultimateAttackEnabled: 0
-  fightingHandler_2P: {fileID: 1940580917}
-  player1TurnIndicator: {fileID: 679528744}
-  player2TurnIndicator: {fileID: 2004430646}
-  deathAnimationDuration: 1
 --- !u!4 &1009282815
 Transform:
   m_ObjectHideFlags: 0

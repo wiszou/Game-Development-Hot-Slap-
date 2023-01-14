@@ -4,44 +4,40 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 public class GameManager_2P : MonoBehaviour
 {
-
+    public FightingHandler_2P fightingHandler_2P; // Add a reference to the fightingHandler_2P script
     public Animator animatorPlayerAttk; // The playerattack's animator component
     public Animator animatorPlayerDodge; // The attackerdodge's animator component
     public Animator animatorEnemyAttk; // The enemyattack's animator component
     public Animator animatorEnemyDodge; // The enemydodge's animator component
     public Animator animatorPlayerUlti; // The playerulti's animator component
     public Animator animatorEnemyUlti; // The enemyulti's animator component
-    public float ultiDuration = 1f; // The ultimate attack animation lasts for 1.5 seconds
-    public int ultiPower = 30; // The amount of damage the player does with the ultimate attack
-    public float dodgeDuration = 0.9f; // Dodge lasts for 0.5 seconds
-    public float attackDuration = 0.3f; // The attack animation lasts for 0.5 seconds
-    public int attackPower = 10; // The amount of damage the attacker does with each attack
     public GameObject player1; // The player being attack
     public GameObject enemy1; // The enemy being attack
+    public Image player1TurnIndicator;
+    public Image player2TurnIndicator;
+
+    public float dodgeDuration = 0.9f; // Dodge lasts for 0.5 seconds
+    public float attackDuration = 0.3f; // The attack animation lasts for 0.5 seconds
+    public float ultiDuration = 1f; // The ultimate attack animation lasts for 1.5 seconds
+    public float deathAnimationDuration = 0.3f;
+    private float dodgeButtonTimer = 0f;
+
+    public int ultiPower = 30; // The amount of damage the player does with the ultimate attack
+    public int attackPower = 10; // The amount of damage the attacker does with each attack
     public int playerOneEnergy = 0; // Player 1's starting energy
     public int playerTwoEnergy = 0; // Player 2's starting energy
     public int energyGainPerHit = 10; // Change 10 to the desired energy gain value
     public int energyCostPerUlti = 50; // The amount of energy required to use the ultimate attack
-    public bool ultimateAttackEnabled = false; // Flag to track if the ultimate attack is enabled for the player
-    public FightingHandler_2P fightingHandler_2P; // Add a reference to the fightingHandler_2P script
 
-    // Flag to track whose turn it is
-    public Image player1TurnIndicator;
-    public Image player2TurnIndicator;
+    public bool ultimateAttackEnabled = false; // Flag to track if the ultimate attack is enabled for the player
     private bool isPlayer1Turn = true;
     private bool enemyDodged = false;
     private bool dodgeButtonDisabled = false;
-    private float dodgeButtonTimer = 0f;
-    public float deathAnimationDuration = 0.3f;
-
-
 
     void Start()
     {
-
         player1TurnIndicator.gameObject.SetActive(false);
         player2TurnIndicator.gameObject.SetActive(false);
 
@@ -59,10 +55,10 @@ public class GameManager_2P : MonoBehaviour
             player2TurnIndicator.gameObject.SetActive(false);
 
             // Check if player 1 has made their move
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 isPlayer1Turn = false;
-                StartCoroutine(WaitForAttackQ());
+                StartCoroutine(WaitForAttackA());
             }
         }
         // Otherwise, it's player 2's turn
@@ -75,37 +71,25 @@ public class GameManager_2P : MonoBehaviour
             player1TurnIndicator.gameObject.SetActive(false);
 
             // Check if player 2 has made their move
-            if (Input.GetKeyDown(KeyCode.Keypad1))
+            if (Input.GetKeyDown(KeyCode.J))
             {
                 isPlayer1Turn = true;
-                StartCoroutine(WaitForAttack1());
+                StartCoroutine(WaitForAttackJ());
             }
         }
 
-
-        if (isPlayer1Turn)
-            {
-                dodgeButtonDisabled = false;
-            }
-        else
-            {
-                dodgeButtonDisabled = true;
-            }
-
-
-
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             isPlayer1Turn = false;
-            StartCoroutine(WaitForUltiE());
+            StartCoroutine(WaitForUltiD());
         }
-        if (Input.GetKeyDown(KeyCode.Keypad3))
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            isPlayer1Turn = true;
-            StartCoroutine(WaitForUlti3());
+            isPlayer1Turn = false;
+            StartCoroutine(WaitForUltiL());
         }
 
-        if (Input.GetKey(KeyCode.Keypad2) && !dodgeButtonDisabled)
+        if (Input.GetKey(KeyCode.K) && !dodgeButtonDisabled)
             {
                 // Disable the dodge button to prevent spamming
                 dodgeButtonDisabled = true;
@@ -113,9 +97,9 @@ public class GameManager_2P : MonoBehaviour
                 enemyDodged = true;
                 // Start the dodge animation and wait for it to finish
                 animatorEnemyDodge.SetTrigger("Dodge");
-                StartCoroutine(WaitForDodge2());
+                StartCoroutine(WaitForDodgeK());
             }
-        if (Input.GetKey(KeyCode.W) && !dodgeButtonDisabled)
+        if (Input.GetKey(KeyCode.S) && !dodgeButtonDisabled)
         {
                 // Disable the dodge button to prevent spamming
              dodgeButtonDisabled = false;
@@ -123,7 +107,7 @@ public class GameManager_2P : MonoBehaviour
                 enemyDodged = true;
                 // Start the dodge animation and wait for it to finish
             animatorPlayerDodge.SetTrigger("Dodge");
-            StartCoroutine(WaitForDodgeW());
+            StartCoroutine(WaitForDodgeS());
         }
     if (dodgeButtonDisabled)
     {
@@ -148,7 +132,6 @@ public class GameManager_2P : MonoBehaviour
         StartCoroutine(DeathSequence2(enemy1));
         }
     }
-
 
     // Attack the enemy
     public void AttackEnemy(GameObject other)
@@ -191,10 +174,6 @@ public class GameManager_2P : MonoBehaviour
         animatorEnemyAttk.SetBool("Attack", true);
     }
 
-
-
-
-
     // Attack the enemy with the ultimate attack
     public void AttackEnemyUlti(GameObject other)
     {
@@ -226,64 +205,63 @@ public class GameManager_2P : MonoBehaviour
         }
     }
 
-    IEnumerator WaitForUltiE()
-    {
-   // Attack the player with the ultimate attack
-    AttackEnemyUlti(enemy1);
-    // Wait for the ultimate attack animation to finish
-    yield return new WaitForSeconds(ultiDuration);
-    // Allow the other player to make a move
-    isPlayer1Turn = false;
-    }
+    IEnumerator WaitForUltiD()
+        {
+            // Attack the player with the ultimate attack
+            AttackEnemyUlti(enemy1);
+            // Wait for the ultimate attack animation to finish
+            yield return new WaitForSeconds(ultiDuration);
+            // Allow the other player to make a move
+            isPlayer1Turn = false;
+        }
 
-    IEnumerator WaitForUlti3()
-    {
-    // Attack the player with the ultimate attack
-    AttackPlayerUlti(player1);
-    // Wait for the ultimate attack animation to finish
-    yield return new WaitForSeconds(ultiDuration);
-    // Allow the other player to make a move
-    isPlayer1Turn = true;
-    }
+    IEnumerator WaitForUltiL()
+        {
+            // Attack the player with the ultimate attack
+            AttackPlayerUlti(player1);
+            // Wait for the ultimate attack animation to finish
+            yield return new WaitForSeconds(ultiDuration);
+            // Allow the other player to make a move
+            isPlayer1Turn = true;
+        }
     
-    IEnumerator WaitForAttackQ()
+    IEnumerator WaitForAttackA()
         {
-        animatorPlayerAttk.SetTrigger("Attack");
-        // Wait for the remaining attack duration
-        yield return new WaitForSeconds(attackDuration);
-        // If the enemy has not pressed the dodge button during the attack animation, decrease their hit points
+            animatorPlayerAttk.SetTrigger("Attack");
+            // Wait for the remaining attack duration
+            yield return new WaitForSeconds(attackDuration);
+            // If the enemy has not pressed the dodge button during the attack animation, decrease their hit points
         if (!enemyDodged)
-        {
-            fightingHandler_2P.playerTwoHP -= attackPower;
-            playerOneEnergy += energyGainPerHit;
-            Debug.Log("Energy gain for Player 1!");
-            
-        }
-        // Reset the enemyDodged flag for the next attack
-        enemyDodged = false;
-        // Turn off the attack animation
-        animatorPlayerAttk.SetBool("Attack", false);
+            {
+                fightingHandler_2P.playerTwoHP -= attackPower;
+                playerOneEnergy += energyGainPerHit;
+                Debug.Log("Energy gain for Player 1!");
+            }
+            // Reset the enemyDodged flag for the next attack
+            enemyDodged = false;
+            // Turn off the attack animation
+            animatorPlayerAttk.SetBool("Attack", false);
         }
 
-     IEnumerator WaitForAttack1()
+     IEnumerator WaitForAttackJ()
         {
-        animatorEnemyAttk.SetTrigger("Attack");
-        // Wait for the remaining attack duration
-        yield return new WaitForSeconds(attackDuration);
-        // If the enemy has not pressed the dodge button during the attack animation, decrease their hit points
+            animatorEnemyAttk.SetTrigger("Attack");
+            // Wait for the remaining attack duration
+            yield return new WaitForSeconds(attackDuration);
+            // If the enemy has not pressed the dodge button during the attack animation, decrease their hit points
         if (!enemyDodged)
-        {
-            fightingHandler_2P.playerOneHP -= attackPower;
-            playerTwoEnergy += energyGainPerHit;
-            Debug.Log("Energy gain for Player 2!");
-        }
-        // Reset the enemyDodged flag for the next attack
-        enemyDodged = false;
-         // Turn off the attack animation
-        animatorEnemyAttk.SetBool("Attack", false);
+            {
+                fightingHandler_2P.playerOneHP -= attackPower;
+                playerTwoEnergy += energyGainPerHit;
+                Debug.Log("Energy gain for Player 2!");
+            }
+            // Reset the enemyDodged flag for the next attack
+            enemyDodged = false;
+            // Turn off the attack animation
+            animatorEnemyAttk.SetBool("Attack", false);
         }
 
-    IEnumerator WaitForDodgeW()
+    IEnumerator WaitForDodgeS()
         {
             dodgeButtonDisabled = true;
             // Wait for the specified duration
@@ -292,7 +270,7 @@ public class GameManager_2P : MonoBehaviour
             animatorPlayerDodge.SetBool("Dodge", false);
         }
 
-     IEnumerator WaitForDodge2()
+     IEnumerator WaitForDodgeK()
         {
             dodgeButtonDisabled = true;
             // Wait for the specified duration
@@ -301,28 +279,23 @@ public class GameManager_2P : MonoBehaviour
             animatorEnemyDodge.SetBool("Dodge", false);
         }
 
-
-
-
     IEnumerator DeathSequence1(GameObject player1)
         {
-        // Wait for the death animation to finish
-        yield return new WaitForSeconds(deathAnimationDuration);
-
-        // Destroy the character game object
-        Destroy(player1);
-
-        // Transition to the next scene to reveal the winner
-        SceneManager.LoadScene("OverallWinner");
+            // Wait for the death animation to finish
+            yield return new WaitForSeconds(deathAnimationDuration);
+            // Destroy the character game object
+            Destroy(player1);
+            // Transition to the next scene to reveal the winner
+            SceneManager.LoadScene("OverallWinner");
         }
 
     IEnumerator DeathSequence2(GameObject enemy1)
         {
-        // Wait for the death animation to finish
-        yield return new WaitForSeconds(deathAnimationDuration);
-        // Destroy the character game object
-        Destroy(enemy1);
-        // Transition to the next scene to reveal the winner
-        SceneManager.LoadScene("OverallWinner");
+            // Wait for the death animation to finish
+            yield return new WaitForSeconds(deathAnimationDuration);
+            // Destroy the character game object
+            Destroy(enemy1);
+            // Transition to the next scene to reveal the winner
+            SceneManager.LoadScene("OverallWinner");
         }
 }
