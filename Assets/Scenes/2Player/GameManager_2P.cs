@@ -18,7 +18,7 @@ public class GameManager_2P : MonoBehaviour
     public Image player1TurnIndicator;
     public Image player2TurnIndicator;
 
-    public float dodgeDuration = 0.9f; // Dodge lasts for 0.5 seconds
+    public float dodgeDuration = 0.1f; // Dodge lasts for 0.5 seconds
     public float attackDuration = 0.3f; // The attack animation lasts for 0.5 seconds
     public float ultiDuration = 1f; // The ultimate attack animation lasts for 1.5 seconds
     public float deathAnimationDuration = 0.3f;
@@ -102,13 +102,14 @@ public class GameManager_2P : MonoBehaviour
         if (Input.GetKey(KeyCode.S) && !dodgeButtonDisabled)
         {
                 // Disable the dodge button to prevent spamming
-             dodgeButtonDisabled = false;
+                dodgeButtonDisabled = true;
                 // Set the flag to indicate that the enemy has dodged
                 enemyDodged = true;
                 // Start the dodge animation and wait for it to finish
             animatorPlayerDodge.SetTrigger("Dodge");
             StartCoroutine(WaitForDodgeS());
         }
+
     if (dodgeButtonDisabled)
     {
         dodgeButtonTimer += Time.deltaTime;
@@ -206,7 +207,8 @@ public class GameManager_2P : MonoBehaviour
     }
 
     IEnumerator WaitForUltiD()
-        {
+
+        {   
             // Attack the player with the ultimate attack
             AttackEnemyUlti(enemy1);
             // Wait for the ultimate attack animation to finish
@@ -216,7 +218,8 @@ public class GameManager_2P : MonoBehaviour
         }
 
     IEnumerator WaitForUltiL()
-        {
+        {   
+     
             // Attack the player with the ultimate attack
             AttackPlayerUlti(player1);
             // Wait for the ultimate attack animation to finish
@@ -226,7 +229,8 @@ public class GameManager_2P : MonoBehaviour
         }
     
     IEnumerator WaitForAttackA()
-        {
+        {   
+    
             animatorPlayerAttk.SetTrigger("Attack");
             // Wait for the remaining attack duration
             yield return new WaitForSeconds(attackDuration);
@@ -244,7 +248,8 @@ public class GameManager_2P : MonoBehaviour
         }
 
      IEnumerator WaitForAttackJ()
-        {
+        {   
+   
             animatorEnemyAttk.SetTrigger("Attack");
             // Wait for the remaining attack duration
             yield return new WaitForSeconds(attackDuration);
@@ -262,25 +267,32 @@ public class GameManager_2P : MonoBehaviour
         }
 
     IEnumerator WaitForDodgeS()
-        {
-            dodgeButtonDisabled = true;
-            // Wait for the specified duration
-            yield return new WaitForSeconds(dodgeDuration);
+        {   
+     
+            if (dodgeButtonDisabled)
+            {// Wait for the specified duration
+                yield return new WaitForSeconds(dodgeDuration);
+            }
+            enemyDodged = false;
             // Turn off the dodge animation
             animatorPlayerDodge.SetBool("Dodge", false);
         }
 
      IEnumerator WaitForDodgeK()
-        {
-            dodgeButtonDisabled = true;
+        {   
+ 
+            if (dodgeButtonDisabled)
+            {
             // Wait for the specified duration
             yield return new WaitForSeconds(dodgeDuration);
+            }
+            enemyDodged = false;
             // Turn off the dodge animation
             animatorEnemyDodge.SetBool("Dodge", false);
         }
 
     IEnumerator DeathSequence1(GameObject player1)
-        {
+        {   
             // Wait for the death animation to finish
             yield return new WaitForSeconds(deathAnimationDuration);
             // Destroy the character game object
@@ -290,7 +302,7 @@ public class GameManager_2P : MonoBehaviour
         }
 
     IEnumerator DeathSequence2(GameObject enemy1)
-        {
+        {   
             // Wait for the death animation to finish
             yield return new WaitForSeconds(deathAnimationDuration);
             // Destroy the character game object

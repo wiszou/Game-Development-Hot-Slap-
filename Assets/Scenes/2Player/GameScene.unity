@@ -1483,7 +1483,7 @@ MonoBehaviour:
   enemy1: {fileID: 1223878643}
   player1TurnIndicator: {fileID: 679528744}
   player2TurnIndicator: {fileID: 2004430646}
-  dodgeDuration: 0.9
+  dodgeDuration: 0.5
   attackDuration: 0.2
   ultiDuration: 1
   deathAnimationDuration: 1
